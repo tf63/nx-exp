@@ -6,6 +6,9 @@
             "dependsOn": ["^build"],
             "cache": true
         },
+        "dev": {
+            "cache": false
+        },
         "test": {
             "outputs": ["{projectRoot}/test/unit/coverage"],
             "cache": true
@@ -22,6 +25,9 @@
             "outputs": ["{projectRoot}/test-results playwright-report"],
             "cache": true
         },
+        "test:e2e:ui": {
+            "dependsOn": ["test:e2e"]
+        },
         "build:fast": {
             "outputs": ["{projectRoot}/dist .next storybook-static build"],
             "cache": true
@@ -31,11 +37,18 @@
         },
         "lint:fix": {
             "cache": true
-        },
-        "test:e2e:ui": {
-            "dependsOn": ["test:e2e"]
         }
     },
     "defaultBase": "main",
-    "plugins": []
+    "plugins": [
+        {
+            "plugin": "@nx/next/plugin",
+            "options": {
+                "buildTargetName": "build",
+                "devTargetName": "dev",
+                "startTargetName": "start",
+                "serveStaticTargetName": "serve-static"
+            }
+        }
+    ]
 }
