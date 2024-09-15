@@ -1,0 +1,41 @@
+{
+    "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "targetDefaults": {
+        "build": {
+            "outputs": ["{projectRoot}/dist .next storybook-static build"],
+            "dependsOn": ["^build"],
+            "cache": true
+        },
+        "test": {
+            "outputs": ["{projectRoot}/test/unit/coverage"],
+            "cache": true
+        },
+        "test:watch": {
+            "outputs": ["{projectRoot}/test/unit/coverage"],
+            "cache": true
+        },
+        "test:ui": {
+            "outputs": ["{projectRoot}/test/unit/coverage"],
+            "cache": true
+        },
+        "test:e2e": {
+            "outputs": ["{projectRoot}/test-results playwright-report"],
+            "cache": true
+        },
+        "build:fast": {
+            "outputs": ["{projectRoot}/dist .next storybook-static build"],
+            "cache": true
+        },
+        "lint": {
+            "cache": true
+        },
+        "lint:fix": {
+            "cache": true
+        },
+        "test:e2e:ui": {
+            "dependsOn": ["test:e2e"]
+        }
+    },
+    "defaultBase": "main",
+    "plugins": []
+}

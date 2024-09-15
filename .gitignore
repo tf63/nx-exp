@@ -67,3 +67,7 @@ test-results/
 blob-report/
 playwright-report/
 playwright/.cache/
+
+# nx
+.nx/cache
+.nx/workspace-data

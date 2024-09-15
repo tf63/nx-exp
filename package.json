@@ -1,16 +1,16 @@
 {
-    "name": "turbo-template",
+    "name": "nx-template",
     "private": true,
     "scripts": {
-        "build": "turbo build",
-        "dev": "turbo dev",
-        "lint": "turbo lint",
-        "lint:fix": "turbo lint:fix",
-        "test": "turbo test",
-        "test:watch": "turbo test:watch",
-        "test:ui": "turbo test:ui",
-        "test:e2e": "turbo test:e2e",
-        "test:e2e:ui": "turbo test:e2e:ui",
+        "build": "nx run-many --target=build --all",
+        "dev": "nx run-many --target=dev --all",
+        "lint": "nx run-many --target=lint --all",
+        "lint:fix": "nx run-many --target=lint:fix --all",
+        "test": "nx run-many --target=test --all",
+        "test:watch": "nx run-many --target=test:watch --all",
+        "test:ui": "nx run-many --target=test:ui --all",
+        "test:e2e": "nx run-many --target=test:e2e --all",
+        "test:e2e:ui": "nx run-many --target=test:e2e:ui --all",
         "format": "prettier . --write",
         "prepare": "lefthook install",
         "generate": "plop"
@@ -20,6 +20,11 @@
         "@commitlint/cli": "^19.4.1",
         "@commitlint/config-conventional": "^19.4.1",
         "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
+        "@nx/next": "19.7.3",
+        "@nx/playwright": "19.7.3",
+        "@nx/storybook": "19.7.3",
+        "@nx/vite": "19.7.3",
+        "@nx/web": "19.7.3",
         "@playwright/test": "^1.46.1",
         "@storybook/blocks": "^8.2.9",
         "@storybook/nextjs": "^8.2.9",
@@ -37,12 +42,12 @@
         "autoprefixer": "^10.4.20",
         "jsdom": "^25.0.0",
         "lefthook": "^1.7.14",
+        "nx": "19.7.3",
         "plop": "^4.0.1",
         "postcss": "^8.4.43",
         "prettier": "^3.2.5",
         "prettier-plugin-tailwindcss": "^0.6.6",
         "tailwindcss": "^3.4.10",
-        "turbo": "^2.1.1",
         "typescript": "^5.3.3",
         "vite": "^5.4.2",
         "vitest": "^2.0.4"
@@ -53,5 +58,6 @@
     },
     "volta": {
         "node": "20.11.0"
-    }
+    },
+    "dependencies": {}
 }
